@@ -38,7 +38,7 @@ export const Route = createFileRoute("/psicologo/$id")({
 });
 
 function PerfilPsicologo() {
-  const { p } = Route.useLoaderData();
+  const { p } = Route.useLoaderData() as { p: Psicologo };
   const { isFavorito, toggle } = useFavoritos();
   const fav = isFavorito(p.id);
 

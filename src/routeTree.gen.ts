@@ -14,6 +14,7 @@ import { Route as AuthRouteImport } from './routes/auth'
 import { Route as BuscarRouteImport } from './routes/buscar'
 import { Route as FavoritosRouteImport } from './routes/favoritos'
 import { Route as NotificacoesRouteImport } from './routes/notificacoes'
+import { Route as PerfilRouteImport } from './routes/perfil'
 import { Route as PsicologoIdRouteImport } from './routes/psicologo/$id'
 
 const IndexRoute = IndexRouteImport.update({
@@ -41,6 +42,11 @@ const NotificacoesRoute = NotificacoesRouteImport.update({
   path: '/notificacoes',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PerfilRoute = PerfilRouteImport.update({
+  id: '/perfil',
+  path: '/perfil',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PsicologoIdRoute = PsicologoIdRouteImport.update({
   id: '/psicologo/$id',
   path: '/psicologo/$id',
@@ -53,6 +59,7 @@ export interface FileRoutesByFullPath {
   '/buscar': typeof BuscarRoute
   '/favoritos': typeof FavoritosRoute
   '/notificacoes': typeof NotificacoesRoute
+  '/perfil': typeof PerfilRoute
   '/psicologo/$id': typeof PsicologoIdRoute
 }
 export interface FileRoutesByTo {
@@ -61,6 +68,7 @@ export interface FileRoutesByTo {
   '/buscar': typeof BuscarRoute
   '/favoritos': typeof FavoritosRoute
   '/notificacoes': typeof NotificacoesRoute
+  '/perfil': typeof PerfilRoute
   '/psicologo/$id': typeof PsicologoIdRoute
 }
 export interface FileRoutesById {
@@ -70,6 +78,7 @@ export interface FileRoutesById {
   '/buscar': typeof BuscarRoute
   '/favoritos': typeof FavoritosRoute
   '/notificacoes': typeof NotificacoesRoute
+  '/perfil': typeof PerfilRoute
   '/psicologo/$id': typeof PsicologoIdRoute
 }
 export interface FileRouteTypes {
@@ -80,6 +89,7 @@ export interface FileRouteTypes {
     | '/buscar'
     | '/favoritos'
     | '/notificacoes'
+    | '/perfil'
     | '/psicologo/$id'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -88,6 +98,7 @@ export interface FileRouteTypes {
     | '/buscar'
     | '/favoritos'
     | '/notificacoes'
+    | '/perfil'
     | '/psicologo/$id'
   id:
     | '__root__'
@@ -96,6 +107,7 @@ export interface FileRouteTypes {
     | '/buscar'
     | '/favoritos'
     | '/notificacoes'
+    | '/perfil'
     | '/psicologo/$id'
   fileRoutesById: FileRoutesById
 }
@@ -105,6 +117,7 @@ export interface RootRouteChildren {
   BuscarRoute: typeof BuscarRoute
   FavoritosRoute: typeof FavoritosRoute
   NotificacoesRoute: typeof NotificacoesRoute
+  PerfilRoute: typeof PerfilRoute
   PsicologoIdRoute: typeof PsicologoIdRoute
 }
 
@@ -145,6 +158,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NotificacoesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/perfil': {
+      id: '/perfil'
+      path: '/perfil'
+      fullPath: '/perfil'
+      preLoaderRoute: typeof PerfilRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/psicologo/$id': {
       id: '/psicologo/$id'
       path: '/psicologo/$id'
@@ -161,6 +181,7 @@ const rootRouteChildren: RootRouteChildren = {
   BuscarRoute: BuscarRoute,
   FavoritosRoute: FavoritosRoute,
   NotificacoesRoute: NotificacoesRoute,
+  PerfilRoute: PerfilRoute,
   PsicologoIdRoute: PsicologoIdRoute,
 }
 export const routeTree = rootRouteImport
