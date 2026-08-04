@@ -10,33 +10,115 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AuthRouteImport } from './routes/auth'
+import { Route as BuscarRouteImport } from './routes/buscar'
+import { Route as FavoritosRouteImport } from './routes/favoritos'
+import { Route as NotificacoesRouteImport } from './routes/notificacoes'
+import { Route as PerfilRouteImport } from './routes/perfil'
+import { Route as PsicologoIdRouteImport } from './routes/psicologo/$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BuscarRoute = BuscarRouteImport.update({
+  id: '/buscar',
+  path: '/buscar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FavoritosRoute = FavoritosRouteImport.update({
+  id: '/favoritos',
+  path: '/favoritos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NotificacoesRoute = NotificacoesRouteImport.update({
+  id: '/notificacoes',
+  path: '/notificacoes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PerfilRoute = PerfilRouteImport.update({
+  id: '/perfil',
+  path: '/perfil',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PsicologoIdRoute = PsicologoIdRouteImport.update({
+  id: '/psicologo/$id',
+  path: '/psicologo/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
+  '/buscar': typeof BuscarRoute
+  '/favoritos': typeof FavoritosRoute
+  '/notificacoes': typeof NotificacoesRoute
+  '/perfil': typeof PerfilRoute
+  '/psicologo/$id': typeof PsicologoIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
+  '/buscar': typeof BuscarRoute
+  '/favoritos': typeof FavoritosRoute
+  '/notificacoes': typeof NotificacoesRoute
+  '/perfil': typeof PerfilRoute
+  '/psicologo/$id': typeof PsicologoIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
+  '/buscar': typeof BuscarRoute
+  '/favoritos': typeof FavoritosRoute
+  '/notificacoes': typeof NotificacoesRoute
+  '/perfil': typeof PerfilRoute
+  '/psicologo/$id': typeof PsicologoIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/auth'
+    | '/buscar'
+    | '/favoritos'
+    | '/notificacoes'
+    | '/perfil'
+    | '/psicologo/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/auth'
+    | '/buscar'
+    | '/favoritos'
+    | '/notificacoes'
+    | '/perfil'
+    | '/psicologo/$id'
+  id:
+    | '__root__'
+    | '/'
+    | '/auth'
+    | '/buscar'
+    | '/favoritos'
+    | '/notificacoes'
+    | '/perfil'
+    | '/psicologo/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuthRoute: typeof AuthRoute
+  BuscarRoute: typeof BuscarRoute
+  FavoritosRoute: typeof FavoritosRoute
+  NotificacoesRoute: typeof NotificacoesRoute
+  PerfilRoute: typeof PerfilRoute
+  PsicologoIdRoute: typeof PsicologoIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,22 +130,60 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/buscar': {
+      id: '/buscar'
+      path: '/buscar'
+      fullPath: '/buscar'
+      preLoaderRoute: typeof BuscarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/favoritos': {
+      id: '/favoritos'
+      path: '/favoritos'
+      fullPath: '/favoritos'
+      preLoaderRoute: typeof FavoritosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/notificacoes': {
+      id: '/notificacoes'
+      path: '/notificacoes'
+      fullPath: '/notificacoes'
+      preLoaderRoute: typeof NotificacoesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/perfil': {
+      id: '/perfil'
+      path: '/perfil'
+      fullPath: '/perfil'
+      preLoaderRoute: typeof PerfilRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/psicologo/$id': {
+      id: '/psicologo/$id'
+      path: '/psicologo/$id'
+      fullPath: '/psicologo/$id'
+      preLoaderRoute: typeof PsicologoIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuthRoute: AuthRoute,
+  BuscarRoute: BuscarRoute,
+  FavoritosRoute: FavoritosRoute,
+  NotificacoesRoute: NotificacoesRoute,
+  PerfilRoute: PerfilRoute,
+  PsicologoIdRoute: PsicologoIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
