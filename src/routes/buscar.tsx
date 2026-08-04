@@ -13,12 +13,12 @@ import {
   type Modalidade,
 } from "@/lib/mentelivre";
 
-type Busca = { q?: string; esp?: string };
+type Busca = { q?: string | undefined; esp?: string | undefined };
 
 export const Route = createFileRoute("/buscar")({
   validateSearch: (search: Record<string, unknown>): Busca => ({
-    q: typeof search.q === "string" ? search.q : undefined,
-    esp: typeof search.esp === "string" ? search.esp : undefined,
+    q: typeof search["q"] === "string" ? search["q"] : undefined,
+    esp: typeof search["esp"] === "string" ? search["esp"] : undefined,
   }),
   head: () => ({
     meta: [

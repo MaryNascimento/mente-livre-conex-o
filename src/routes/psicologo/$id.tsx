@@ -10,11 +10,11 @@ import {
   Users,
 } from "lucide-react";
 import { MobileShell } from "@/components/MobileShell";
-import { iniciais, PSICOLOGOS } from "@/lib/mentelivre";
+import { iniciais, PSICOLOGOS, type Psicologo } from "@/lib/mentelivre";
 import { useFavoritos } from "@/lib/store";
 
 export const Route = createFileRoute("/psicologo/$id")({
-  loader: ({ params }) => {
+  loader: ({ params }): { p: Psicologo } => {
     const p = PSICOLOGOS.find((x) => x.id === params.id);
     if (!p) throw notFound();
     return { p };
