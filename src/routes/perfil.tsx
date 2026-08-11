@@ -130,7 +130,26 @@ function Perfil() {
                 <span className="text-muted-foreground">E-mail: </span>
                 {usuario.email || "—"}
               </p>
+              {usuario.cpf ? (
+                <p>
+                  <span className="text-muted-foreground">CPF: </span>
+                  {usuario.cpf}
+                </p>
+              ) : null}
+              {usuario.crp ? (
+                <p>
+                  <span className="text-muted-foreground">CRP: </span>
+                  {usuario.crp}
+                </p>
+              ) : null}
+              {usuario.diploma ? (
+                <p>
+                  <span className="text-muted-foreground">Diploma: </span>
+                  {usuario.diploma}
+                </p>
+              ) : null}
             </div>
+
           )}
         </section>
 

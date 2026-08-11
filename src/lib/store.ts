@@ -7,7 +7,11 @@ export type Usuario = {
   nome: string;
   email: string;
   tipo: "paciente" | "psicologo";
+  cpf?: string;
+  crp?: string;
+  diploma?: string;
 };
+
 
 function read<T>(key: string, fallback: T): T {
   if (typeof window === "undefined") return fallback;
