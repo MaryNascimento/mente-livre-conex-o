@@ -86,10 +86,9 @@ function Auth() {
             nome: form.nome || (ehPsicologo ? "Psicólogo(a)" : "Paciente MenteLivre"),
             email: form.email,
             tipo,
-            cpf: ehPsicologo ? undefined : form.cpf,
-            crp: ehPsicologo ? form.crp : undefined,
-            diploma: ehPsicologo ? diploma : undefined,
+            ...(ehPsicologo ? { crp: form.crp, diploma } : { cpf: form.cpf }),
           });
+
           toast.success(modo === "entrar" ? "Que bom te ver de novo!" : "Conta criada com carinho!");
           navigate({ to: "/perfil" });
         }}
