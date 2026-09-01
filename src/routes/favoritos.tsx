@@ -32,14 +32,14 @@ function Favoritos() {
           <PsicologoCard key={p.id} p={p} />
         ))}
         {lista.length === 0 ? (
-          <div className="rounded-2xl border border-dashed border-border p-8 text-center">
+          <div className="rounded-3xl border border-dashed border-border p-8 text-center">
             <HeartOff className="mx-auto h-6 w-6 text-muted-foreground" />
             <p className="mt-3 text-sm text-muted-foreground">
               Você ainda não favoritou nenhum psicólogo.
             </p>
             <Link
               to="/buscar"
-              className="mt-4 inline-block rounded-2xl bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground"
+              className="mt-4 inline-block rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground"
             >
               Buscar psicólogos
             </Link>
