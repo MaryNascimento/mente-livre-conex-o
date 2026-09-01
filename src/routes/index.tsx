@@ -1,9 +1,11 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
-import { Search, ShieldCheck, Sparkles, ArrowRight } from "lucide-react";
+import { Search, ShieldCheck, ArrowRight } from "lucide-react";
 import { MobileShell } from "@/components/MobileShell";
 import { PsicologoCard } from "@/components/PsicologoCard";
 import { ESPECIALIDADES, PSICOLOGOS } from "@/lib/mentelivre";
+import logo from "@/assets/mentelivre-logo.png";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
