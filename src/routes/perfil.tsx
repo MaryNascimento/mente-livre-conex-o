@@ -105,13 +105,13 @@ function Perfil() {
                 value={form.nome}
                 onChange={(e) => setForm({ ...form, nome: e.target.value })}
                 aria-label="Nome"
-                className="w-full rounded-3xl rounded-full border border-transparent bg-brand-soft/60 px-4 py-3 text-sm outline-none focus:border-ring focus:bg-card"
+                className="w-full rounded-full border border-transparent bg-brand-soft/60 px-4 py-3 text-sm outline-none focus:border-ring focus:bg-card"
               />
               <input
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
                 aria-label="E-mail"
-                className="w-full rounded-3xl rounded-full border border-transparent bg-brand-soft/60 px-4 py-3 text-sm outline-none focus:border-ring focus:bg-card"
+                className="w-full rounded-full border border-transparent bg-brand-soft/60 px-4 py-3 text-sm outline-none focus:border-ring focus:bg-card"
               />
               <button
                 type="submit"

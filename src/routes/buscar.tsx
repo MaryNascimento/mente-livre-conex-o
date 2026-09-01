@@ -147,7 +147,7 @@ function Buscar() {
                 onChange={(e) => setLocal(e.target.value)}
                 placeholder="Estado ou cidade (ex.: SP, Recife)"
                 aria-label="Estado ou cidade"
-                className="w-full rounded-3xl rounded-full border border-transparent bg-brand-soft/60 px-4 py-3 text-sm outline-none focus:border-ring focus:bg-card"
+                className="w-full rounded-full border border-transparent bg-brand-soft/60 px-4 py-3 text-sm outline-none focus:border-ring focus:bg-card"
               />
               <div className="mt-2 flex flex-wrap gap-2">
                 {ESTADOS.map((uf) => (
