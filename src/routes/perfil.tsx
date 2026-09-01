@@ -51,7 +51,7 @@ function Perfil() {
             </p>
             <Link
               to="/auth"
-              className="mt-4 inline-block rounded-3xl bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground"
+              className="mt-4 inline-block rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground"
             >
               Entrar ou cadastrar
             </Link>
@@ -63,9 +63,9 @@ function Perfil() {
 
   return (
     <MobileShell>
-      <section className="bg-calm-gradient px-5 pt-8 pb-6 sm:rounded-t-[2.25rem]">
+      <section className="bg-turquoise px-5 pt-8 pb-6 sm:rounded-t-[2.25rem]">
         <div className="flex min-w-0 items-center gap-4">
-          <span className="grid h-16 w-16 shrink-0 place-items-center rounded-3xl bg-brand-gradient text-xl font-semibold text-primary-foreground">
+          <span className="grid h-16 w-16 shrink-0 place-items-center rounded-3xl bg-turquoise text-xl font-semibold text-primary-foreground">
             {iniciais(usuario.nome)}
           </span>
           <div className="min-w-0">
@@ -105,17 +105,17 @@ function Perfil() {
                 value={form.nome}
                 onChange={(e) => setForm({ ...form, nome: e.target.value })}
                 aria-label="Nome"
-                className="w-full rounded-3xl border border-input bg-card px-4 py-3 text-sm outline-none focus:border-ring"
+                className="w-full rounded-3xl rounded-full border border-transparent bg-brand-soft/60 px-4 py-3 text-sm outline-none focus:border-ring focus:bg-card"
               />
               <input
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
                 aria-label="E-mail"
-                className="w-full rounded-3xl border border-input bg-card px-4 py-3 text-sm outline-none focus:border-ring"
+                className="w-full rounded-3xl rounded-full border border-transparent bg-brand-soft/60 px-4 py-3 text-sm outline-none focus:border-ring focus:bg-card"
               />
               <button
                 type="submit"
-                className="w-full rounded-3xl bg-primary py-3 text-sm font-semibold text-primary-foreground"
+                className="w-full rounded-full bg-primary py-3 text-sm font-semibold text-primary-foreground"
               >
                 Salvar alterações
               </button>

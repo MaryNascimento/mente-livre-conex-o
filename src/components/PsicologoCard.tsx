@@ -23,7 +23,7 @@ export function PsicologoCard({ p }: { p: Psicologo }) {
         params={{ id: p.id }}
         className="flex min-w-0 items-start gap-3 pr-10"
       >
-        <span className="grid h-14 w-14 shrink-0 place-items-center rounded-3xl bg-brand-gradient text-lg font-semibold text-primary-foreground">
+        <span className="grid h-14 w-14 shrink-0 place-items-center rounded-3xl bg-turquoise text-lg font-semibold text-primary-foreground">
           {iniciais(p.nome)}
         </span>
         <div className="min-w-0 flex-1">

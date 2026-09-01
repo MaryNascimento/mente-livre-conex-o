@@ -44,7 +44,7 @@ function PerfilPsicologo() {
 
   return (
     <MobileShell>
-      <section className="bg-brand-gradient px-5 pt-6 pb-8 text-primary-foreground sm:rounded-t-[2.25rem]">
+      <section className="bg-turquoise px-5 pt-6 pb-8 text-primary-foreground sm:rounded-t-[2.25rem]">
         <div className="flex items-center justify-between">
           <Link
             to="/buscar"
