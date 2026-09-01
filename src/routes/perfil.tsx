@@ -45,13 +45,13 @@ function Perfil() {
       <MobileShell>
         <ScreenHeader titulo="Meu perfil" />
         <div className="px-5">
-          <div className="rounded-3xl border border-dashed border-border p-8 text-center">
+          <div className="rounded-2xl border border-dashed border-border p-8 text-center">
             <p className="text-sm text-muted-foreground">
               Entre na sua conta para gerenciar seus dados, favoritos e consultas.
             </p>
             <Link
               to="/auth"
-              className="mt-4 inline-block rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground"
+              className="mt-4 inline-block rounded-2xl bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground"
             >
               Entrar ou cadastrar
             </Link>
@@ -63,9 +63,9 @@ function Perfil() {
 
   return (
     <MobileShell>
-      <section className="bg-turquoise px-5 pt-8 pb-6 sm:rounded-t-[2.25rem]">
+      <section className="bg-calm-gradient px-5 pt-8 pb-6 sm:rounded-t-[2.25rem]">
         <div className="flex min-w-0 items-center gap-4">
-          <span className="grid h-16 w-16 shrink-0 place-items-center rounded-3xl bg-turquoise text-xl font-semibold text-primary">
+          <span className="grid h-16 w-16 shrink-0 place-items-center rounded-3xl bg-brand-gradient text-xl font-semibold text-primary-foreground">
             {iniciais(usuario.nome)}
           </span>
           <div className="min-w-0">
@@ -105,23 +105,23 @@ function Perfil() {
                 value={form.nome}
                 onChange={(e) => setForm({ ...form, nome: e.target.value })}
                 aria-label="Nome"
-                className="w-full rounded-full border border-transparent bg-brand-soft/60 px-4 py-3 text-sm outline-none focus:border-ring focus:bg-card"
+                className="w-full rounded-2xl border border-input bg-card px-4 py-3 text-sm outline-none focus:border-ring"
               />
               <input
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
                 aria-label="E-mail"
-                className="w-full rounded-full border border-transparent bg-brand-soft/60 px-4 py-3 text-sm outline-none focus:border-ring focus:bg-card"
+                className="w-full rounded-2xl border border-input bg-card px-4 py-3 text-sm outline-none focus:border-ring"
               />
               <button
                 type="submit"
-                className="w-full rounded-full bg-primary py-3 text-sm font-semibold text-primary-foreground"
+                className="w-full rounded-2xl bg-primary py-3 text-sm font-semibold text-primary-foreground"
               >
                 Salvar alterações
               </button>
             </form>
           ) : (
-            <div className="mt-3 space-y-2 rounded-3xl border border-border bg-card p-4 text-sm shadow-card">
+            <div className="mt-3 space-y-2 rounded-2xl border border-border bg-card p-4 text-sm shadow-card">
               <p>
                 <span className="text-muted-foreground">Nome: </span>
                 {usuario.nome}
@@ -162,7 +162,7 @@ function Perfil() {
           </div>
           <div className="mt-3 space-y-2">
             {favoritosLista.length === 0 ? (
-              <p className="rounded-3xl border border-dashed border-border p-4 text-sm text-muted-foreground">
+              <p className="rounded-2xl border border-dashed border-border p-4 text-sm text-muted-foreground">
                 Nenhum psicólogo favoritado ainda.
               </p>
             ) : (
@@ -171,7 +171,7 @@ function Perfil() {
                   key={p.id}
                   to="/psicologo/$id"
                   params={{ id: p.id }}
-                  className="flex items-center gap-3 rounded-3xl border border-border bg-card p-3 shadow-card"
+                  className="flex items-center gap-3 rounded-2xl border border-border bg-card p-3 shadow-card"
                 >
                   <Heart className="h-4 w-4 shrink-0 text-primary" fill="currentColor" />
                   <span className="min-w-0 flex-1 truncate text-sm font-medium">{p.nome}</span>
@@ -188,7 +188,7 @@ function Perfil() {
             {historico.map((h) => (
               <div
                 key={h.data}
-                className="flex items-center gap-3 rounded-3xl border border-border bg-card p-3 shadow-card"
+                className="flex items-center gap-3 rounded-2xl border border-border bg-card p-3 shadow-card"
               >
                 <CalendarCheck className="h-4 w-4 shrink-0 text-aqua" />
                 <div className="min-w-0 flex-1">
@@ -210,7 +210,7 @@ function Perfil() {
             toast("Você saiu da sua conta.");
             navigate({ to: "/" });
           }}
-          className="inline-flex w-full items-center justify-center gap-2 rounded-3xl border border-border py-3 text-sm font-semibold text-muted-foreground"
+          className="inline-flex w-full items-center justify-center gap-2 rounded-2xl border border-border py-3 text-sm font-semibold text-muted-foreground"
         >
           <LogOut className="h-4 w-4" /> Sair da conta
         </button>

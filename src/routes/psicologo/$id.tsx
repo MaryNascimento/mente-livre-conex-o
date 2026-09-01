@@ -44,7 +44,7 @@ function PerfilPsicologo() {
 
   return (
     <MobileShell>
-      <section className="bg-turquoise px-5 pt-6 pb-8 text-primary-foreground sm:rounded-t-[2.25rem]">
+      <section className="bg-brand-gradient px-5 pt-6 pb-8 text-primary-foreground sm:rounded-t-[2.25rem]">
         <div className="flex items-center justify-between">
           <Link
             to="/buscar"
@@ -129,7 +129,7 @@ function PerfilPsicologo() {
         <Bloco titulo={`Avaliações (${p.comentarios.length})`}>
           <div className="space-y-3">
             {p.comentarios.map((c) => (
-              <div key={c.autor} className="rounded-3xl border border-border bg-card p-3">
+              <div key={c.autor} className="rounded-2xl border border-border bg-card p-3">
                 <div className="flex items-center justify-between">
                   <p className="text-sm font-medium">{c.autor}</p>
                   <span className="inline-flex items-center gap-1 text-xs font-semibold">
@@ -150,7 +150,7 @@ function PerfilPsicologo() {
           )}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 rounded-full bg-aqua py-3.5 text-sm font-semibold text-aqua-foreground shadow-card"
+          className="flex items-center justify-center gap-2 rounded-2xl bg-aqua py-3.5 text-sm font-semibold text-aqua-foreground shadow-card"
         >
           <MessageCircle className="h-4 w-4" /> Entrar em contato pelo WhatsApp
         </a>
@@ -161,7 +161,7 @@ function PerfilPsicologo() {
 
 function Metrica({ valor, rotulo, icone }: { valor: string; rotulo: string; icone: React.ReactNode }) {
   return (
-    <div className="rounded-3xl bg-primary-foreground/15 py-2.5">
+    <div className="rounded-2xl bg-primary-foreground/15 py-2.5">
       <p className="flex items-center justify-center gap-1 text-sm font-semibold">
         {icone} {valor}
       </p>

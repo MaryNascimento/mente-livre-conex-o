@@ -49,10 +49,10 @@ function Notificacoes() {
         {avisos.map(({ icone: Icone, ...a }) => (
           <article
             key={a.titulo}
-            className="flex gap-3 rounded-3xl border border-border bg-card p-4 shadow-card"
+            className="flex gap-3 rounded-2xl border border-border bg-card p-4 shadow-card"
           >
             <span
-              className={`grid h-10 w-10 shrink-0 place-items-center rounded-2xl ${
+              className={`grid h-10 w-10 shrink-0 place-items-center rounded-xl ${
                 a.novo ? "bg-brand-soft text-primary" : "bg-secondary text-muted-foreground"
               }`}
             >
