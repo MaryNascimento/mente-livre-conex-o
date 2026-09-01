@@ -1,6 +1,8 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Home, Search, Heart, Bell, User } from "lucide-react";
 import type { ReactNode } from "react";
+import logo from "@/assets/mentelivre-logo.png";
+
 
 const tabs = [
   { to: "/", label: "Início", icon: Home },
