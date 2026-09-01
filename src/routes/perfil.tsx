@@ -65,7 +65,7 @@ function Perfil() {
     <MobileShell>
       <section className="bg-turquoise px-5 pt-8 pb-6 sm:rounded-t-[2.25rem]">
         <div className="flex min-w-0 items-center gap-4">
-          <span className="grid h-16 w-16 shrink-0 place-items-center rounded-3xl bg-turquoise text-xl font-semibold text-primary-foreground">
+          <span className="grid h-16 w-16 shrink-0 place-items-center rounded-3xl bg-turquoise text-xl font-semibold text-primary">
             {iniciais(usuario.nome)}
           </span>
           <div className="min-w-0">
