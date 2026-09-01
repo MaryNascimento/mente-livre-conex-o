@@ -33,7 +33,7 @@ function Inicio() {
     <MobileShell>
       <section className="bg-brand-gradient px-5 pt-8 pb-10 text-primary-foreground sm:rounded-t-[2.25rem]">
         <div className="flex items-center gap-2">
-          <span className="grid h-9 w-9 place-items-center rounded-xl bg-primary-foreground/15">
+          <span className="grid h-9 w-9 place-items-center rounded-2xl bg-primary-foreground/15">
             <Sparkles className="h-5 w-5" />
           </span>
           <p className="text-lg font-semibold tracking-tight">MenteLivre</p>
@@ -46,7 +46,7 @@ function Inicio() {
         </p>
 
         <form
-          className="mt-5 flex items-center gap-2 rounded-2xl bg-background p-1.5 shadow-card"
+          className="mt-5 flex items-center gap-2 rounded-3xl bg-background p-1.5 shadow-card"
           onSubmit={(e) => {
             e.preventDefault();
             navigate({ to: "/buscar", search: { q } });
@@ -62,7 +62,7 @@ function Inicio() {
           />
           <button
             type="submit"
-            className="shrink-0 rounded-xl bg-primary px-3 py-2 text-xs font-semibold text-primary-foreground"
+            className="shrink-0 rounded-2xl bg-primary px-3 py-2 text-xs font-semibold text-primary-foreground"
           >
             Buscar
           </button>
@@ -70,14 +70,14 @@ function Inicio() {
 
         <Link
           to="/buscar"
-          className="mt-3 flex items-center justify-center gap-2 rounded-2xl bg-primary-foreground/15 px-4 py-3 text-sm font-semibold backdrop-blur"
+          className="mt-3 flex items-center justify-center gap-2 rounded-3xl bg-primary-foreground/15 px-4 py-3 text-sm font-semibold backdrop-blur"
         >
           Encontrar Psicólogo <ArrowRight className="h-4 w-4" />
         </Link>
       </section>
 
       <section className="px-5 pt-6">
-        <div className="flex items-center gap-2 rounded-2xl border border-border bg-card p-3 text-xs text-muted-foreground shadow-card">
+        <div className="flex items-center gap-2 rounded-3xl border border-border bg-card p-3 text-xs text-muted-foreground shadow-card">
           <ShieldCheck className="h-4 w-4 shrink-0 text-aqua" />
           Todos os profissionais possuem CRP verificado.
         </div>
@@ -116,7 +116,7 @@ function Inicio() {
       <section className="px-5 pt-6 pb-2">
         <Link
           to="/auth"
-          className="block rounded-2xl bg-accent p-4 text-sm font-medium text-accent-foreground"
+          className="block rounded-3xl bg-accent p-4 text-sm font-medium text-accent-foreground"
         >
           É paciente ou psicólogo? Crie sua conta gratuita →
         </Link>

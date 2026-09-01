@@ -81,7 +81,7 @@ function Buscar() {
           <button
             type="button"
             onClick={() => setFiltrosAbertos((v) => !v)}
-            className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl border border-border bg-card text-primary shadow-card"
+            className="grid h-11 w-11 shrink-0 place-items-center rounded-3xl border border-border bg-card text-primary shadow-card"
             aria-label="Mostrar filtros"
           >
             <SlidersHorizontal className="h-4 w-4" />
@@ -90,7 +90,7 @@ function Buscar() {
       />
 
       <div className="px-5">
-        <div className="flex items-center gap-2 rounded-2xl border border-border bg-card px-3 py-2.5 shadow-card">
+        <div className="flex items-center gap-2 rounded-3xl border border-border bg-card px-3 py-2.5 shadow-card">
           <Search className="h-4 w-4 shrink-0 text-muted-foreground" />
           <input
             value={q}
@@ -147,7 +147,7 @@ function Buscar() {
                 onChange={(e) => setLocal(e.target.value)}
                 placeholder="Estado ou cidade (ex.: SP, Recife)"
                 aria-label="Estado ou cidade"
-                className="w-full rounded-2xl border border-input bg-card px-4 py-3 text-sm outline-none focus:border-ring"
+                className="w-full rounded-3xl border border-input bg-card px-4 py-3 text-sm outline-none focus:border-ring"
               />
               <div className="mt-2 flex flex-wrap gap-2">
                 {ESTADOS.map((uf) => (
@@ -178,7 +178,7 @@ function Buscar() {
           <PsicologoCard key={p.id} p={p} />
         ))}
         {resultados.length === 0 ? (
-          <p className="rounded-2xl border border-dashed border-border p-6 text-center text-sm text-muted-foreground">
+          <p className="rounded-3xl border border-dashed border-border p-6 text-center text-sm text-muted-foreground">
             Nenhum profissional encontrado com esses filtros.
           </p>
         ) : null}
