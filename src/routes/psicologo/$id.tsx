@@ -150,7 +150,7 @@ function PerfilPsicologo() {
           )}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 rounded-3xl bg-aqua py-3.5 text-sm font-semibold text-aqua-foreground shadow-card"
+          className="flex items-center justify-center gap-2 rounded-full bg-aqua py-3.5 text-sm font-semibold text-aqua-foreground shadow-card"
         >
           <MessageCircle className="h-4 w-4" /> Entrar em contato pelo WhatsApp
         </a>
