@@ -58,14 +58,22 @@ export function ScreenHeader({
   acao?: ReactNode;
 }) {
   return (
-    <header className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-5 pt-7 pb-4">
+    <header className="grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-3 bg-turquoise px-5 pt-8 pb-6 sm:rounded-t-[2.25rem]">
+      <img
+        src={logo}
+        alt="MenteLivre"
+        width={816}
+        height={816}
+        className="h-12 w-12 shrink-0 object-contain"
+      />
       <div className="min-w-0">
-        <h1 className="truncate text-2xl font-semibold tracking-tight">{titulo}</h1>
+        <h1 className="truncate font-display text-2xl text-primary-foreground">{titulo}</h1>
         {subtitulo ? (
-          <p className="mt-1 text-sm text-muted-foreground">{subtitulo}</p>
+          <p className="mt-1 truncate text-sm text-aqua-foreground/80">{subtitulo}</p>
         ) : null}
       </div>
       {acao}
     </header>
   );
 }
+
